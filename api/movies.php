@@ -14,10 +14,7 @@ class Movie {
         $this->lang = $lang;
         $this->poster = $poster;
         $this->year = $year;
-        $this->cast = [
-            'actors' => numOfActors($cast),
-            'cast' => $cast
-        ];
+        $this->cast = $cast;
     }
     
     public function numOfActors($cast){

@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, ol{
+    list-style: none;
+    padding: 0;
+}
+
+a{
+    color: currentColor;
+    text-decoration: none;
+}
+
+body{
+    background: rgb(30, 30, 37);
+    color: whitesmoke;
+    font-family: 'Poppins';
+}
+
+/* MAIN STYLE */
+
+.container{
+    width: 1024px;
+    margin: 0 auto;
+    padding: 0 0.8rem;
+}
+
+.movies{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.movie_card{
+    background: rgb(48, 48, 62);
+    padding: 1rem 1.75rem;
+    border-radius: 20px;
+    overflow: hidden;
+}
