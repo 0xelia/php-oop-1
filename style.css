@@ -22,10 +22,24 @@ body{
     font-family: 'Poppins';
 }
 
+img{
+    width: 100%;
+}
+
+header{
+    background: rgb(16, 16, 20);
+    padding: 0.75rem 0;
+    color: rgb(244, 205, 13);
+}
+
+header h1{
+    text-align: center;
+}
+
 /* MAIN STYLE */
 
 .container{
-    width: 1024px;
+    max-width: 1024px;
     margin: 0 auto;
     padding: 0 0.8rem;
 }
@@ -34,11 +48,85 @@ body{
     display: flex;
     justify-content: center;
     gap: 2rem;
+    padding: 3rem 0;
 }
 
 .movie_card{
     background: rgb(48, 48, 62);
-    padding: 1rem 1.75rem;
+    /* padding: 1rem 1.75rem; */
     border-radius: 20px;
     overflow: hidden;
+    max-width: 270px;
+    position: relative;
+}
+
+.poster{
+    height: 100%;
+}
+
+
+.poster img {
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+}
+
+.back_side{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background:rgb(16, 16, 20);
+    padding: 1rem;
+    transform: translateY(-200%);
+    transition: all 300ms ease-out;
+    border-radius: 20px;
+}
+
+.movie_card:hover .back_side{
+    transform: translateY(0);
+}
+
+.movie_info{
+    display: flex;
+    color: lightgray;
+    font-size: 14px;
+}
+
+.movie_info p {
+    display: flex;
+    align-items: center;
+}
+
+.movie_info p:first-child::after {
+    content: '';
+    display: block;
+    margin: 0 8px;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: lightgrey;
+}
+
+.card_btn{
+    background: transparent;
+    padding: 1rem 1.75rem;
+    color: rgb(244, 205, 13);
+    position: absolute;
+    border: solid currentColor 1px;
+    border-radius: 10px;
+    bottom: 1rem;
+    transform: translateY(200%);
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+    transition-delay: 500ms;
+    cursor: pointer;
+}
+
+.movie_card:hover .card_btn{
+    transform: translateY(0);
+    opacity: 1;
 }

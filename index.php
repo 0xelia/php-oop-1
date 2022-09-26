@@ -21,11 +21,11 @@ $cast_movie_2 =[
 
 
 
-$movie_1 = new Movie ('Pirates of Caribbean', 'US', 'https://m.media-amazon.com/images/M/MV5BNGYyZGM5MGMtYTY2Ni00M2Y1LWIzNjQtYWUzM2VlNGVhMDNhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX67_CR0,0,67,98_AL_.jpg' , 2003, $cast_movie_1);
-$movie_2 = new Movie ('Spider Man', 'US', 'https://imgs.search.brave.com/ZPmDgcIkBqajmkXmN56tq8lvhiXy9Mza4caDSh5wWtw/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9pbWFn/ZS50bWRiLm9yZy90/L3Avb3JpZ2luYWwv/OFlON2RZbUpoVnZO/NmtPZ0JBTmxtb05p/WXNkLmpwZw', 2002, $cast_movie_2);
+$movie_1 = new Movie ('Pirates of Caribbean', 'US', 110, 'https://imgs.search.brave.com/krdrb_tRJDfrvSHtsioKP5fyclujrGYEb-LgjO_1U9A/rs:fit:300:444:1/g:ce/aHR0cHM6Ly9saDMu/Z29vZ2xldXNlcmNv/bnRlbnQuY29tL3By/b3h5L2FLczBaRWxa/eWpCMUV5d25mN3lj/NVRmcEdzTURoS3BZ/QlFJT0VKcFhDZkpP/eTF4R0hlSFd1NUky/R1RvZGwzUWpmOW81/czdYN2FjS2I1WXFM/blBWOGdVWXhUeHpv/MHUyM2VDVndxZEEx/RFJ6cnVzbmoyUlJq/UG5LSnFqeUVjajF0/eW9xUkY3bE8zSS1f/N1NFNmxhN1ZrMjM0/TjNzYVF3PXc2ODA' , 2003, $cast_movie_1);
+$movie_2 = new Movie ('Spider Man', 'US', 130, 'https://imgs.search.brave.com/ZPmDgcIkBqajmkXmN56tq8lvhiXy9Mza4caDSh5wWtw/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9pbWFn/ZS50bWRiLm9yZy90/L3Avb3JpZ2luYWwv/OFlON2RZbUpoVnZO/NmtPZ0JBTmxtb05p/WXNkLmpwZw', 2002, $cast_movie_2);
 
 $movies = [$movie_1, $movie_2];
-// var_dump($movies);
+
 
 ?>
 
@@ -41,10 +41,7 @@ $movies = [$movie_1, $movie_2];
 <body>
     <header>
         <h1>
-            <div class="container">
-
-                Movie Cards
-            </div>
+            Movie cards
         </h1>
     </header>
     <main>
@@ -54,7 +51,21 @@ $movies = [$movie_1, $movie_2];
                     foreach($movies as $movie){
                         ?>
                         <li class="movie_card">
-                            
+                            <figure class="poster">
+                                <img src="<?= $movie->poster ?>" alt="">
+                            </figure>
+                            <div class="back_side">
+                                <h3>
+                                    <?= $movie->title ?>
+                                </h3>
+                                <div class="movie_info">
+                                    <p><?= $movie->year ?></p>
+                                    <p id="no_dot"><?= $movie->duration ?> min</p>
+                                </div>
+                                <button class="card_btn">
+                                    Watch Now
+                                </button>
+                            </div>
                         </li>
                         <?php
                     }
